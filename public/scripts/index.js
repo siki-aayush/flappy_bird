@@ -16,6 +16,7 @@ document.addEventListener("click", () => {
             break;
 
         case gameState.playing:
+            if (bird.y - bird.radius <= 0) return;
             bird.flap();
             flapSound.play();
             break;
@@ -43,6 +44,7 @@ document.addEventListener("keyup", (e) => {
 
         case gameState.playing:
             if (e.key === " ") {
+                if (bird.y - bird.radius <= 0) return;
                 bird.flap();
                 flapSound.play();
             }
